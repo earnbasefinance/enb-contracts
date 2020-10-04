@@ -1,0 +1,28 @@
+{
+  "name": "earnbase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "flatten": "sol-merger \"contracts/**/*.sol\" ./build/publish",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-token": "npx truffle migrate --network kovan -f 2 --to 2",
+    "deploy-pools": "npx truffle migrate --network kovan -f 3 --to 3 && truffle run verify ENBGovernance StakingRewards --network kovan",
+    "verify-contracts": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "2.5.0",
+    "@truffle/hdwallet-provider": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "truffle-plugin-verify": "^0.4.0"
+  },
+  "devDependencies": {
+    "dotenv-flow": "^3.2.0",
+    "sol-merger": "^3.1.0"
+  }
+}

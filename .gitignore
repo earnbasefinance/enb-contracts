@@ -1,0 +1,6 @@
+node_modules
+build
+.vscode
+.env
+.env.development
+.env.production
